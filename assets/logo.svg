@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <!-- Background with cyber grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a3a" stroke-width="0.5"/>
+    </pattern>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Speed lines -->
+    <linearGradient id="speedLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(78,156,255,0)"/>
+      <stop offset="50%" style="stop-color:rgba(78,156,255,0.3)"/>
+      <stop offset="100%" style="stop-color:rgba(78,156,255,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="100%" height="100%" fill="#0a0a1e"/>
+  
+  <!-- Cyber grid -->
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Speed lines -->
+  <g transform="rotate(-15, 600, 200)">
+    <rect x="-100" y="50" width="1400" height="2" fill="url(#speedLine)">
+      <animate attributeName="x" from="-400" to="400" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-100" y="150" width="1400" height="3" fill="url(#speedLine)">
+      <animate attributeName="x" from="-400" to="400" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-100" y="250" width="1400" height="2" fill="url(#speedLine)">
+      <animate attributeName="x" from="-400" to="400" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Ethereum Logo -->
+  <g transform="translate(500,50) scale(0.8)" filter="url(#glow)">
+    <!-- Main diamond shape -->
+    <path d="M100,0 L200,150 L100,300 L0,150 Z" fill="#343434"/>
+    
+    <!-- Inner lines -->
+    <path d="M100,0 L100,300 M0,150 L200,150" stroke="#8C8C8C" stroke-width="2"/>
+    
+    <!-- Glowing overlay -->
+    <path d="M100,0 L200,150 L100,300 L0,150 Z" 
+          fill="none" 
+          stroke="#4E9CFF" 
+          stroke-width="3">
+      <animate attributeName="stroke-width" 
+               values="3;6;3" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Digital particles -->
+  <g fill="#4E9CFF">
+    <circle cx="300" cy="100" r="2">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="200" r="2">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="300" r="2">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Binary code background -->
+  <text x="50" y="380" fill="#1a1a3a" font-family="monospace" font-size="14">
+    00110000 01111000 01010010 01000101 01001011 01010100 01001111 01010010 01000001
+  </text>
+</svg>
