@@ -1,0 +1,13 @@
+{
+  "name": "white-hat-l2-frontrunning",
+  "homepage": "https://github.com/0xRektora/white-hat-l2-frontrunning",
+  "description": "A simple and easy EthersJS tool to send a bundle of transactions on L2s and fast paced EVM chains.",
+  "author": "0xRektora 0xrektora@gmail.com (https://github.com/0xRektora)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
